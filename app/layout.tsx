@@ -9,8 +9,9 @@ const vazirmatn = Vazirmatn({
 });
 
 export const metadata: Metadata = {
-  title: "آرگوس | سامانه یکپارچه نظارت و مدیریت",
-  description: "سامانه یکپارچه نظارت، تحلیل و مدیریت هوشمند آرگوس",
+  title: "آرگوس | سیستم‌های نظارت تصویری و دزدگیر اماکن",
+  description:
+    "مرجع تخصصی عرضه و اجرای دوربین‌های مداربسته، دستگاه‌های ضبط DVR/NVR و سیستم‌های هوشمند دزدگیر اماکن برند آرگوس (Argus)",
 };
 
 export default function RootLayout({

@@ -1,46 +1,61 @@
 import Link from "next/link";
-import { ArrowLeft, CheckCircle2, Shield, Activity, Lock } from "lucide-react";
+import {
+  Cctv,
+  ShieldCheck,
+  BellRing,
+  Video,
+  HardDrive,
+  Eye,
+  ArrowLeft,
+  CheckCircle2,
+  Radio,
+  SlidersHorizontal,
+} from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden py-16 md:py-24 lg:py-28">
+    <section className="relative overflow-hidden py-14 md:py-20 lg:py-24">
       {/* Background radial gradient glow */}
       <div className="pointer-events-none absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
-        <div className="relative aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-linear-to-tr from-primary/30 to-primary/5 opacity-40 sm:w-288.75 inset-s-1/2" />
+        <div className="relative aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-linear-to-tr from-primary/35 via-primary/10 to-transparent opacity-40 sm:w-288.75 inset-s-1/2" />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
           {/* Main Hero Text */}
           <div className="space-y-6 text-center lg:col-span-7 lg:text-start">
-            <div className="inline-flex items-center gap-2 rounded-full border bg-muted/50 px-3.5 py-1 text-xs font-medium text-muted-foreground">
-              <Shield className="size-3.5 text-primary" />
-              <span>نسخه جدید سامانه نظارتی آرگوس</span>
+            <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-xs font-semibold text-primary">
+              <Cctv className="size-4" />
+              <span>تجهیزات نظارت تصویری و دزدگیر اماکن آرگوس</span>
             </div>
 
-            <h1 className="font-heading text-3xl font-extrabold tracking-tight sm:text-5xl sm:leading-tight lg:text-6xl lg:leading-tight">
-              سامانه یکپارچه نظارت،
-              <span className="block text-primary">مدیریت و احراز هویت هوشمند</span>
+            <h1 className="font-heading text-3xl font-extrabold tracking-tight sm:text-5xl sm:leading-tight lg:text-5.5xl lg:leading-tight">
+              امنیت بی‌وقفه، نظارت هوشمند؛
+              <span className="block text-primary mt-1">
+                تخصصی‌ترین سیستم‌های مداربسته و ضدسرقت
+              </span>
             </h1>
 
             <p className="mx-auto max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg lg:mx-0">
-              زیرساختی امن، سریع و مقیاس‌پذیر برای ثبت‌نام کاربران، راستی‌آزمایی
-              شماره موبایل و کنترل دسترسی‌ها. طراحی‌شده با رعایت استانداردهای روز نرم‌افزار.
+              ارائه مدرن‌ترین دوربین‌های مداربسته دید در شب رنگی (وارم‌لایت)،
+              دستگاه‌های ضبط هوشمند XVR/NVR با انتقال تصویر پرسرعت بدون قطعی،
+              و پنل‌های پیشرفته دزدگیر سیم‌کارتی آرگوس با گارانتی طلایی تعویض و خدمات
+              نصب تخصصی در سراسر کشور.
             </p>
 
             {/* Buttons */}
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start">
-              <Link
-                href="/register"
+              <a
+                href="#packages"
                 className={buttonVariants({
                   size: "lg",
-                  className: "w-full sm:w-auto px-6",
+                  className: "w-full sm:w-auto px-7 font-bold shadow-lg shadow-primary/20",
                 })}
               >
-                شروع ثبت‌نام
+                مشاهده پکیج‌های آماده و پرفروش
                 <ArrowLeft className="size-4 ms-2 rtl:-scale-x-100" />
-              </Link>
+              </a>
               <Link
                 href="/contact-us"
                 className={buttonVariants({
@@ -49,81 +64,135 @@ export function HeroSection() {
                   className: "w-full sm:w-auto px-6",
                 })}
               >
-                تماس با کارشناسان
+                مشاوره و بازدید رایگان پروژه
               </Link>
             </div>
 
             {/* Value checklist */}
-            <div className="flex flex-wrap items-center justify-center gap-6 pt-4 text-xs font-medium text-muted-foreground lg:justify-start">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 text-xs font-medium text-muted-foreground">
               <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="size-4 text-primary" />
-                <span>احراز هویت پیامکی سریع</span>
+                <CheckCircle2 className="size-4 text-primary shrink-0" />
+                <span>۲۴ ماه گارانتی تعویض</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="size-4 text-primary" />
-                <span>رمزنگاری چندلایه‌ای</span>
+                <CheckCircle2 className="size-4 text-primary shrink-0" />
+                <span>دید در شب تمام رنگی</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="size-4 text-primary" />
-                <span>رابط کاربری واکنش‌گرا و راست‌چین</span>
+                <CheckCircle2 className="size-4 text-primary shrink-0" />
+                <span>انتقال تصویر P2P رایگان</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 className="size-4 text-primary shrink-0" />
+                <span>دزدگیر سیم‌کارتی ضدخطا</span>
               </div>
             </div>
           </div>
 
-          {/* Visual Presentation Element */}
+          {/* Visual Presentation Element: High-Tech Argus Security Console */}
           <div className="lg:col-span-5">
-            <div className="relative mx-auto max-w-md rounded-2xl border bg-card p-6 shadow-xl shadow-primary/5">
-              <div className="flex items-center justify-between border-b pb-4">
+            <div className="relative mx-auto max-w-md rounded-2xl border bg-card/95 p-5 shadow-2xl backdrop-blur-sm border-border/80">
+              {/* Header of Console */}
+              <div className="flex items-center justify-between border-b pb-3.5">
                 <div className="flex items-center gap-2">
-                  <div className="size-3 rounded-full bg-destructive/60" />
-                  <div className="size-3 rounded-full bg-chart-2/60" />
-                  <div className="size-3 rounded-full bg-primary/60" />
+                  <span className="relative flex size-2.5">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+                    <span className="relative inline-flex size-2.5 rounded-full bg-emerald-500"></span>
+                  </span>
+                  <span className="text-xs font-bold text-foreground">
+                    مرکز نظارت هوشمند آرگوس
+                  </span>
                 </div>
-                <span className="text-xs font-mono text-muted-foreground">
-                  status: active
-                </span>
+                <div className="flex items-center gap-1 text-[11px] font-mono text-muted-foreground bg-muted/60 px-2 py-0.5 rounded">
+                  <span>ARGUS-LIVE</span>
+                </div>
               </div>
 
-              <div className="space-y-4 pt-5">
-                <div className="flex items-center justify-between rounded-lg bg-muted/50 p-3">
-                  <div className="flex items-center gap-3">
-                    <div className="flex size-8 items-center justify-center rounded-md bg-primary/10 text-primary">
-                      <Lock className="size-4" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-semibold">پروتکل امنیتی</div>
-                      <div className="text-[11px] text-muted-foreground">
-                        ارتباط رمزگذاری‌شده SSL/TLS
-                      </div>
-                    </div>
+              {/* 4-Channel Live View Simulation Grid */}
+              <div className="mt-4 grid grid-cols-2 gap-2.5">
+                {/* Channel 1 */}
+                <div className="relative overflow-hidden rounded-lg bg-neutral-900 border border-neutral-800 p-2.5 text-neutral-100 aspect-4/3 flex flex-col justify-between">
+                  <div className="flex items-center justify-between text-[10px]">
+                    <span className="flex items-center gap-1 font-mono text-emerald-400">
+                      <span className="size-1.5 rounded-full bg-emerald-400"></span>
+                      CH-01: ورودی
+                    </span>
+                    <span className="text-neutral-400 text-[9px] font-mono">4K ULTRA</span>
                   </div>
-                  <span className="rounded bg-primary/10 px-2 py-0.5 text-[10px] font-medium text-primary">
-                    تأییدشده
-                  </span>
+                  <div className="flex flex-col items-center justify-center my-auto text-neutral-500">
+                    <Eye className="size-6 text-neutral-400 mb-1" />
+                    <span className="text-[10px] text-neutral-300">دید در شب وارم‌لایت</span>
+                  </div>
+                  <div className="flex items-center justify-between text-[9px] text-neutral-400">
+                    <span>تشخیص حرکت: عادی</span>
+                    <span className="font-mono text-emerald-400">REC ●</span>
+                  </div>
                 </div>
 
-                <div className="flex items-center justify-between rounded-lg bg-muted/50 p-3">
-                  <div className="flex items-center gap-3">
-                    <div className="flex size-8 items-center justify-center rounded-md bg-chart-1/20 text-foreground">
-                      <Activity className="size-4 text-primary" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-semibold">پایش لحظه‌ای</div>
-                      <div className="text-[11px] text-muted-foreground">
-                        نظارت مستمر بر وضعیت سرویس‌ها
-                      </div>
-                    </div>
+                {/* Channel 2 */}
+                <div className="relative overflow-hidden rounded-lg bg-neutral-900 border border-neutral-800 p-2.5 text-neutral-100 aspect-4/3 flex flex-col justify-between">
+                  <div className="flex items-center justify-between text-[10px]">
+                    <span className="flex items-center gap-1 font-mono text-emerald-400">
+                      <span className="size-1.5 rounded-full bg-emerald-400"></span>
+                      CH-02: محوطه
+                    </span>
+                    <span className="text-neutral-400 text-[9px] font-mono">5MP PRO</span>
                   </div>
-                  <span className="rounded bg-primary/10 px-2 py-0.5 text-[10px] font-medium text-primary">
-                    آنلاین
-                  </span>
+                  <div className="flex flex-col items-center justify-center my-auto text-neutral-500">
+                    <Cctv className="size-6 text-neutral-400 mb-1" />
+                    <span className="text-[10px] text-neutral-300">بدنه فلزی ضدآب</span>
+                  </div>
+                  <div className="flex items-center justify-between text-[9px] text-neutral-400">
+                    <span>زوم دیجیتال 4X</span>
+                    <span className="font-mono text-emerald-400">REC ●</span>
+                  </div>
                 </div>
 
-                <div className="rounded-lg border border-dashed p-4 text-center">
-                  <div className="text-xs text-muted-foreground">
-                    سامانه آماده اتصال به درگاه سرویس‌های ابری و پایگاه داده
+                {/* Channel 3: DVR Status */}
+                <div className="rounded-lg bg-muted/60 border p-3 flex flex-col justify-between">
+                  <div className="flex items-center gap-2">
+                    <div className="flex size-7 items-center justify-center rounded-md bg-primary/10 text-primary">
+                      <HardDrive className="size-4" />
+                    </div>
+                    <div>
+                      <div className="text-xs font-semibold">دستگاه XVR / NVR</div>
+                      <div className="text-[10px] text-muted-foreground">فشرده‌سازی H.265+</div>
+                    </div>
+                  </div>
+                  <div className="mt-2 text-[11px] text-emerald-600 dark:text-emerald-400 font-medium">
+                    هارد بنفش: ۱ ترابایت فعال
                   </div>
                 </div>
+
+                {/* Channel 4: Alarm Status */}
+                <div className="rounded-lg bg-muted/60 border p-3 flex flex-col justify-between">
+                  <div className="flex items-center gap-2">
+                    <div className="flex size-7 items-center justify-center rounded-md bg-amber-500/10 text-amber-600">
+                      <BellRing className="size-4" />
+                    </div>
+                    <div>
+                      <div className="text-xs font-semibold">دزدگیر سیم‌کارتی</div>
+                      <div className="text-[10px] text-muted-foreground">پنل مرکزی آرگوس</div>
+                    </div>
+                  </div>
+                  <div className="mt-2 flex items-center justify-between">
+                    <span className="text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">
+                      وضعیت: مسلح (فعال)
+                    </span>
+                    <span className="size-2 rounded-full bg-emerald-500"></span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bottom Quick Status Strip */}
+              <div className="mt-3.5 flex items-center justify-between rounded-lg border border-dashed p-2.5 bg-background text-[11px]">
+                <div className="flex items-center gap-2">
+                  <Radio className="size-3.5 text-primary animate-pulse" />
+                  <span className="text-muted-foreground">
+                    انتقال تصویر ابری P2P روی موبایل
+                  </span>
+                </div>
+                <span className="font-medium text-primary">آنلاین و متصل</span>
               </div>
             </div>
           </div>

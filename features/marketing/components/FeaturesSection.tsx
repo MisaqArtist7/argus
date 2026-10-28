@@ -1,10 +1,10 @@
 import {
-  Smartphone,
-  Users,
-  FileText,
-  Lock,
-  Layers,
-  Headphones,
+  Cpu,
+  Moon,
+  HardDrive,
+  ShieldAlert,
+  Radio,
+  Volume2,
 } from "lucide-react";
 import {
   Card,
@@ -17,40 +17,40 @@ import {
 export function FeaturesSection() {
   const features = [
     {
-      title: "احراز هویت پیامکی (OTP)",
+      title: "هوش مصنوعی و تفکیک انسان و خودرو",
       description:
-        "ارسال سریع کدهای یکبار مصرف پیامکی جهت اعتبارسنجی و ورود بی‌دردسر کاربران بدون نیاز به رمزهای پیچیده.",
-      icon: Smartphone,
+        "الگوریتم‌های هوشمند جهت تشخیص دقیق سوژه انسانی و وسایل نقلیه و کاهش ۹۵٪ هشدارهای کاذب ناشی از حرکت باد، درختان یا حشرات.",
+      icon: Cpu,
     },
     {
-      title: "مدیریت یکپارچه کاربران",
+      title: "دید در شب رنگی وارم‌لایت (Full-Color)",
       description:
-        "ثبت اطلاعات شناسنامه‌ای، شماره تماس و ایجاد پروفایل‌های کاری امن با ساختاری منظم و شفاف.",
-      icon: Users,
+        "ثبت تصاویر با کیفیت و رنگ واقعی در تاریکی مطلق؛ امکان شناسایی رنگ لباس، مدل خودرو و چهره افراد حتی در نیمه‌شب.",
+      icon: Moon,
     },
     {
-      title: "امنیت داده‌ها و تراکنش‌ها",
+      title: "فشرده‌سازی پیشرفته H.265+",
       description:
-        "استفاده از به‌روزترین الگوریتم‌های اعتبارسنجی جهت جلوگیری از دسترسی‌های غیرمجاز و حملات احتمالی.",
-      icon: Lock,
+        "کاهش بیش از ۵۰ درصدی حجم فایل‌های ضبط‌شده و ترافیک اینترنت، با امکان نگهداری طولانی‌تر آرشیو تصاویر روی هارد دیسک.",
+      icon: HardDrive,
     },
     {
-      title: "ثبت وقایع و نظارت سیستمی",
+      title: "دزدگیر سیم‌کارتی با واکنش ۳ ثانیه‌ای",
       description:
-        "رهگیری مستمر رخدادها، درخواست‌ها و زمان‌های ورود جهت شفافیت کامل فرآیندهای نظارتی.",
-      icon: FileText,
+        "اعلام سرقت آنی از طریق تماس تلفنی صوتی و پیامک فارسی همزمان با به صدا درآمدن آژیرهای محیطی پرقدرت ضد نفوذ.",
+      icon: ShieldAlert,
     },
     {
-      title: "طراحی کاملاً واکنش‌گرا (RTL)",
+      title: "انتقال تصویر ابری P2P پایدار",
       description:
-        "پشتیبانی ذاتی و بدون نقص از زبان فارسی، چیدمان راست‌چین و نمایش بهینه روی انواع نمایشگرها.",
-      icon: Layers,
+        "تماشای آنلاین دوربین‌ها و بازبینی ضبط‌ها از طریق تلفن همراه (iOS و Android) و کامپیوتر در هر نقطه با سرورهای سریع و بدون قطعی.",
+      icon: Radio,
     },
     {
-      title: "پشتیبانی و همراهی مستمر",
+      title: "صدای دوطرفه و میکروفون داخلی ضد نویز",
       description:
-        "امکان ارتباط سریع با تیم پشتیبانی فنی از طریق فرم تماس اختصاصی و پاسخگویی به ابهامات کاربری.",
-      icon: Headphones,
+        "مجهز به میکروفون پرقدرت با ضبط همزمان صدا و تصویر محیط، به همراه امکان پخش صدا و هشدار صوتی برای اخطار به متجاوزین.",
+      icon: Volume2,
     },
   ];
 
@@ -59,14 +59,14 @@ export function FeaturesSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center space-y-3">
           <div className="inline-block text-xs font-semibold uppercase tracking-wider text-primary">
-            امکانات و ویژگی‌ها
+            تکنولوژی‌های حفاظتی روز
           </div>
-          <h2 className="font-heading text-3xl font-bold tracking-tight sm:text-4xl">
-            ویژگی‌های کلیدی سامانه آرگوس
+          <h2 className="font-heading text-3xl font-extrabold tracking-tight sm:text-4xl">
+            ویژگی‌های فنی و مزایای رقابتی آرگوس
           </h2>
           <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
-            مجموعه‌ای منسجم از قابلیت‌ها که برای ارتقای امنیت و ساده‌سازی فرآیندهای
-            ارتباطی توسعه یافته‌اند.
+            ترکیب سخت‌افزار صنعتی باکیفیت و هوش مصنوعی پیشرفته برای ایجاد بیشترین
+            ضریب امنیت برای محیط کار و زندگی شما.
           </p>
         </div>
 
@@ -76,10 +76,10 @@ export function FeaturesSection() {
             return (
               <Card
                 key={idx}
-                className="group transition-all duration-200 hover:shadow-md hover:border-primary/40"
+                className="group transition-all duration-300 hover:shadow-lg hover:border-primary/50"
               >
                 <CardHeader className="space-y-3">
-                  <div className="flex size-11 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                  <div className="flex size-11 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
                     <Icon className="size-5" />
                   </div>
                   <CardTitle className="text-lg font-bold">
