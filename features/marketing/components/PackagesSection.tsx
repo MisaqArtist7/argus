@@ -1,14 +1,9 @@
 import Link from "next/link";
 import {
-  Cctv,
-  HardDrive,
-  BellRing,
   CheckCircle2,
-  ShieldCheck,
   ArrowLeft,
   Sparkles,
   PhoneCall,
-  Zap,
 } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 
@@ -81,17 +76,17 @@ export function PackagesSection() {
   ];
 
   return (
-    <section id="packages" className="py-20 lg:py-24">
+    <section id="packages" className="py-20 lg:py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center space-y-3">
-          <div className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3.5 py-1 text-xs font-semibold text-primary">
-            <Sparkles className="size-3.5" />
+          <div className="inline-flex items-center gap-1.5 rounded-full bg-amber-400/15 border border-amber-400/40 px-3.5 py-1 text-xs font-bold text-neutral-900">
+            <Sparkles className="size-3.5 text-amber-600" />
             <span>پکیج‌های کامل آماده نصب</span>
           </div>
-          <h2 className="font-heading text-3xl font-extrabold tracking-tight sm:text-4xl">
+          <h2 className="font-heading text-3xl font-extrabold tracking-tight sm:text-4xl text-neutral-950">
             پکیج‌های اقتصادی و پرفروش آرگوس
           </h2>
-          <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
+          <p className="text-sm leading-relaxed text-neutral-600 sm:text-base">
             تمامی پکیج‌ها شامل کلیه متعلقات مورد نیاز برای نصب بوده و نیازی به خرید
             جداگانه لوازم جانبی ندارند.
           </p>
@@ -101,15 +96,15 @@ export function PackagesSection() {
           {packages.map((pkg) => (
             <div
               key={pkg.id}
-              className={`relative flex flex-col justify-between rounded-2xl border bg-card p-6 shadow-sm transition-all duration-300 hover:shadow-xl ${
+              className={`relative flex flex-col justify-between rounded-2xl bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-xl ${
                 pkg.isPopular
-                  ? "border-primary ring-2 ring-primary/20 shadow-primary/5"
-                  : "hover:border-primary/40"
+                  ? "border-2 border-amber-400 ring-4 ring-amber-400/20 shadow-lg shadow-amber-400/10"
+                  : "border-2 border-neutral-200 hover:border-amber-400"
               }`}
             >
               {pkg.isPopular && (
                 <div className="absolute -top-3.5 right-6">
-                  <span className="rounded-full bg-primary px-3 py-1 text-[11px] font-bold text-primary-foreground shadow">
+                  <span className="rounded-full bg-amber-400 px-3.5 py-1 text-[11px] font-extrabold text-neutral-950 shadow-md border border-amber-500/40">
                     {pkg.badge}
                   </span>
                 </div>
@@ -117,29 +112,35 @@ export function PackagesSection() {
 
               <div>
                 {!pkg.isPopular && (
-                  <span className="inline-block rounded-md bg-muted px-2.5 py-0.5 text-[11px] font-medium text-muted-foreground mb-2">
+                  <span className="inline-block rounded-md bg-neutral-100 border border-neutral-200 px-2.5 py-0.5 text-[11px] font-semibold text-neutral-800 mb-2">
                     {pkg.badge}
                   </span>
                 )}
-                <h3 className="font-heading text-xl font-bold mt-1">
+                <h3 className="font-heading text-xl font-bold mt-1 text-neutral-950">
                   {pkg.title}
                 </h3>
-                <p className="text-xs text-muted-foreground mt-1 mb-4">
+                <p className="text-xs text-neutral-600 mt-1 mb-4">
                   {pkg.idealFor}
                 </p>
 
-                <div className="border-t pt-4 space-y-2.5">
+                <div className="border-t border-neutral-200 pt-4 space-y-2.5">
                   {pkg.specs.map((spec, i) => (
-                    <div key={i} className="flex items-start gap-2 text-xs leading-relaxed text-muted-foreground">
-                      <CheckCircle2 className="size-4 text-primary shrink-0 mt-0.5" />
+                    <div key={i} className="flex items-start gap-2 text-xs leading-relaxed font-medium text-neutral-700">
+                      <CheckCircle2 className="size-4 text-amber-500 shrink-0 mt-0.5" />
                       <span>{spec}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="mt-6 border-t pt-4 space-y-3">
-                <div className="rounded-lg bg-muted/50 p-2.5 text-center text-xs font-medium text-foreground">
+              <div className="mt-6 border-t border-neutral-200 pt-4 space-y-3">
+                <div
+                  className={`rounded-lg p-2.5 text-center text-xs font-bold ${
+                    pkg.isPopular
+                      ? "bg-neutral-950 text-amber-400 border border-neutral-800"
+                      : "bg-neutral-100 text-neutral-900 border border-neutral-200"
+                  }`}
+                >
                   {pkg.priceNote}
                 </div>
 
@@ -148,7 +149,9 @@ export function PackagesSection() {
                     href={`/contact-us?package=${encodeURIComponent(pkg.title)}`}
                     className={buttonVariants({
                       variant: pkg.isPopular ? "default" : "outline",
-                      className: "w-full justify-center font-bold text-xs sm:text-sm",
+                      className: pkg.isPopular
+                        ? "w-full justify-center font-extrabold text-xs sm:text-sm bg-amber-400 text-neutral-950 hover:bg-amber-500 shadow-md border border-amber-500/30"
+                        : "w-full justify-center font-bold text-xs sm:text-sm border-2 border-neutral-900 text-neutral-950 hover:bg-neutral-950 hover:text-amber-400 transition-colors",
                     })}
                   >
                     استعلام قیمت و سفارش پکیج
@@ -157,9 +160,9 @@ export function PackagesSection() {
 
                   <a
                     href="tel:02188880000"
-                    className="flex items-center justify-center gap-1.5 text-xs text-muted-foreground hover:text-primary transition-colors py-1"
+                    className="flex items-center justify-center gap-1.5 text-xs font-semibold text-neutral-600 hover:text-amber-600 transition-colors py-1"
                   >
-                    <PhoneCall className="size-3.5" />
+                    <PhoneCall className="size-3.5 text-amber-500" />
                     <span>مشاوره تلفنی رایگان: ۰۲۱۸۸۸۸۰۰۰۰</span>
                   </a>
                 </div>

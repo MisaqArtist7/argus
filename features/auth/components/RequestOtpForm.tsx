@@ -36,10 +36,10 @@ export function RequestOtpForm() {
   };
 
   return (
-    <Card className="w-full border-border/80 shadow-md">
+    <Card className="w-full border-2 border-neutral-200 bg-white rounded-2xl shadow-xs">
       <CardHeader className="space-y-1.5 text-center">
-        <CardTitle className="text-2xl font-bold">ورود به سامانه</CardTitle>
-        <CardDescription className="text-xs sm:text-sm">
+        <CardTitle className="text-2xl font-bold text-neutral-950">ورود به سامانه</CardTitle>
+        <CardDescription className="text-xs sm:text-sm text-neutral-600">
           شماره تلفن همراه خود را وارد کنید تا کد یکبار مصرف پیامک شود
         </CardDescription>
       </CardHeader>
@@ -55,7 +55,7 @@ export function RequestOtpForm() {
           )}
 
           <div className="space-y-2">
-            <Label htmlFor="phone">شماره تلفن همراه *</Label>
+            <Label htmlFor="phone" className="text-neutral-900 font-bold text-xs">شماره تلفن همراه *</Label>
             <div className="relative">
               <Input
                 id="phone"
@@ -66,27 +66,32 @@ export function RequestOtpForm() {
                 onChange={(e) => setPhone(e.target.value)}
                 autoComplete="tel"
                 autoFocus
+                className="border-neutral-300 focus-visible:border-amber-400 focus-visible:ring-amber-400"
               />
             </div>
-            <p className="text-[11px] text-muted-foreground">
+            <p className="text-[11px] text-neutral-500">
               کد یکبار مصرف ۵ یا ۶ رقمی به این شماره ارسال خواهد شد.
             </p>
           </div>
         </CardContent>
 
         <CardFooter className="flex flex-col gap-4 pt-2">
-          <Button type="submit" className="w-full font-medium" size="lg">
+          <Button
+            type="submit"
+            className="w-full font-extrabold bg-amber-400 text-neutral-950 hover:bg-amber-500 shadow-md border border-amber-500/30"
+            size="lg"
+          >
             <Smartphone className="size-4 me-2" />
             دریافت کد تأیید
             <ArrowLeft className="size-4 ms-2 rtl:-scale-x-100" />
           </Button>
 
-          <div className="flex flex-col items-center gap-2 text-center text-xs text-muted-foreground">
+          <div className="flex flex-col items-center gap-2 text-center text-xs text-neutral-600">
             <div>
               کد را قبلاً دریافت کرده‌اید؟{" "}
               <Link
                 href="/verify-otp"
-                className="font-semibold text-primary underline-offset-4 hover:underline"
+                className="font-bold text-amber-600 underline-offset-4 hover:underline"
               >
                 وارد کردن کد تأیید
               </Link>
@@ -95,7 +100,7 @@ export function RequestOtpForm() {
               حساب کاربری ندارید؟{" "}
               <Link
                 href="/register"
-                className="font-semibold text-primary underline-offset-4 hover:underline"
+                className="font-bold text-amber-600 underline-offset-4 hover:underline"
               >
                 ثبت‌نام جدید
               </Link>

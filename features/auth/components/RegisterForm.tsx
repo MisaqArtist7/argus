@@ -65,10 +65,10 @@ export function RegisterForm() {
   };
 
   return (
-    <Card className="w-full border-border/80 shadow-md">
+    <Card className="w-full border-2 border-neutral-200 bg-white rounded-2xl shadow-xs">
       <CardHeader className="space-y-1.5 text-center">
-        <CardTitle className="text-2xl font-bold">ثبت‌نام در آرگوس</CardTitle>
-        <CardDescription className="text-xs sm:text-sm">
+        <CardTitle className="text-2xl font-bold text-neutral-950">ثبت‌نام در آرگوس</CardTitle>
+        <CardDescription className="text-xs sm:text-sm text-neutral-600">
           مشخصات خود را برای افتتاح حساب کاربری وارد نمایید
         </CardDescription>
       </CardHeader>
@@ -167,16 +167,20 @@ export function RegisterForm() {
         </CardContent>
 
         <CardFooter className="flex flex-col gap-4 pt-2">
-          <Button type="submit" className="w-full font-medium" size="lg">
+          <Button
+            type="submit"
+            className="w-full font-extrabold bg-amber-400 text-neutral-950 hover:bg-amber-500 shadow-md border border-amber-500/30"
+            size="lg"
+          >
             <UserPlus className="size-4 me-2" />
             ثبت‌نام و ادامه
           </Button>
 
-          <div className="text-center text-xs text-muted-foreground">
+          <div className="text-center text-xs text-neutral-600">
             قبلاً در سامانه ثبت‌نام کرده‌اید؟{" "}
             <Link
               href="/request-otp"
-              className="font-semibold text-primary underline-offset-4 hover:underline"
+              className="font-bold text-amber-600 underline-offset-4 hover:underline"
             >
               ورود با کد یکبار مصرف
             </Link>

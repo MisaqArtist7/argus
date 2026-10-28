@@ -3,13 +3,9 @@ import {
   Cctv,
   HardDrive,
   BellRing,
-  Cable,
   ArrowLeft,
   Check,
-  Eye,
-  Sliders,
   ShieldCheck,
-  Flame,
 } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { buttonVariants } from "@/components/ui/button";
@@ -87,16 +83,16 @@ export function CategoriesSection() {
   ];
 
   return (
-    <section id="categories" className="py-20 bg-muted/30 border-y">
+    <section id="categories" className="py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center space-y-3">
-          <div className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+          <div className="inline-flex items-center gap-1.5 rounded-full bg-amber-400/15 border border-amber-400/40 px-3 py-1 text-xs font-bold text-neutral-900">
             <span>دسته‌بندی تجهیزات حفاظتی آرگوس</span>
           </div>
-          <h2 className="font-heading text-3xl font-extrabold tracking-tight sm:text-4xl">
+          <h2 className="font-heading text-3xl font-extrabold tracking-tight sm:text-4xl text-neutral-950">
             محصولات تخصصی نظارت تصویری و دزدگیر
           </h2>
-          <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
+          <p className="text-sm leading-relaxed text-neutral-600 sm:text-base">
             تمامی تجهیزات با ضمانت اصالت کالا، تست فنی قبل از ارسال و ۲۴ ماه گارانتی
             طلایی شرکت آرگوس تقدیم شما می‌گردد.
           </p>
@@ -109,36 +105,36 @@ export function CategoriesSection() {
               <Card
                 key={cat.id}
                 id={cat.id}
-                className="group relative flex flex-col justify-between overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-primary/50"
+                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border-2 border-neutral-200 bg-white shadow-xs transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-amber-400"
               >
                 <div className="absolute top-3 left-3">
-                  <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-[11px] font-semibold text-primary">
+                  <span className="rounded-full bg-neutral-950 text-amber-400 border border-amber-400/30 px-2.5 py-0.5 text-[11px] font-bold shadow-xs">
                     {cat.badge}
                   </span>
                 </div>
 
                 <CardHeader className="space-y-3 pt-6">
-                  <div className="flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                  <div className="flex size-12 items-center justify-center rounded-xl bg-neutral-950 text-amber-400 border border-amber-400/30 shadow-xs transition-colors group-hover:bg-amber-400 group-hover:text-neutral-950 group-hover:border-amber-400">
                     <Icon className="size-6" />
                   </div>
                   <div>
-                    <CardTitle className="text-lg font-bold">
+                    <CardTitle className="text-lg font-bold text-neutral-950">
                       {cat.title}
                     </CardTitle>
-                    <div className="text-xs font-medium text-primary mt-0.5">
+                    <div className="text-xs font-bold text-amber-600 mt-0.5">
                       {cat.subtitle}
                     </div>
                   </div>
-                  <CardDescription className="text-xs leading-relaxed">
+                  <CardDescription className="text-xs leading-relaxed text-neutral-600">
                     {cat.description}
                   </CardDescription>
                 </CardHeader>
 
                 <CardContent className="space-y-4">
-                  <div className="space-y-2 border-t pt-3">
+                  <div className="space-y-2 border-t border-neutral-200 pt-3">
                     {cat.features.map((feature, i) => (
-                      <div key={i} className="flex items-start gap-2 text-xs text-muted-foreground">
-                        <Check className="size-3.5 text-primary shrink-0 mt-0.5" />
+                      <div key={i} className="flex items-start gap-2 text-xs font-medium text-neutral-700">
+                        <Check className="size-3.5 text-amber-500 shrink-0 mt-0.5" />
                         <span>{feature}</span>
                       </div>
                     ))}
@@ -150,7 +146,7 @@ export function CategoriesSection() {
                       variant: "outline",
                       size: "sm",
                       className:
-                        "w-full justify-between group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-colors",
+                        "w-full justify-between border-2 border-neutral-900 text-neutral-900 font-bold group-hover:bg-neutral-900 group-hover:text-amber-400 group-hover:border-neutral-900 transition-colors",
                     })}
                   >
                     <span>{cat.linkText}</span>

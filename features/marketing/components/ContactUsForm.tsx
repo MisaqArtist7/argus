@@ -59,12 +59,12 @@ export function ContactUsForm() {
   };
 
   return (
-    <Card className="w-full shadow-sm">
+    <Card className="w-full shadow-xs border-2 border-neutral-200 bg-white rounded-2xl">
       <CardHeader className="space-y-1.5">
-        <CardTitle className="text-xl font-bold">
+        <CardTitle className="text-xl font-bold text-neutral-950">
           فرم استعلام قیمت و مشاوره تخصصی آرگوس
         </CardTitle>
-        <CardDescription className="text-xs sm:text-sm">
+        <CardDescription className="text-xs sm:text-sm text-neutral-600">
           مشخصات فضای خود و درخواستتان را بنویسید تا کارشناس فنی آرگوس در کمتر از
           ۲ ساعت کاری پیش‌فاکتور دقیق و مشاوره لازم را به شما ارائه دهد.
         </CardDescription>
@@ -72,14 +72,14 @@ export function ContactUsForm() {
 
       {isSuccess ? (
         <CardContent className="py-8">
-          <div className="flex flex-col items-center text-center space-y-3 rounded-xl border border-primary/20 bg-primary/5 p-6">
-            <div className="flex size-12 items-center justify-center rounded-full bg-primary/10 text-primary">
-              <CheckCircle2 className="size-6" />
+          <div className="flex flex-col items-center text-center space-y-3 rounded-2xl border-2 border-amber-400/50 bg-amber-400/10 p-6">
+            <div className="flex size-14 items-center justify-center rounded-2xl bg-neutral-950 text-amber-400 border border-amber-400/30 shadow-sm">
+              <CheckCircle2 className="size-7 text-amber-500" />
             </div>
-            <h3 className="font-heading text-lg font-bold text-foreground">
+            <h3 className="font-heading text-lg font-bold text-neutral-950">
               درخواست شما با موفقیت ثبت شد
             </h3>
-            <p className="text-xs sm:text-sm text-muted-foreground max-w-md">
+            <p className="text-xs sm:text-sm text-neutral-700 max-w-md">
               از حسن اعتماد شما به برند آرگوس سپاسگزاریم. کارشناسان واحد فروش و فنی به
               زودی با شماره همراه شما تماس خواهند گرفت.
             </p>
@@ -87,7 +87,7 @@ export function ContactUsForm() {
               variant="outline"
               size="sm"
               onClick={() => setIsSuccess(false)}
-              className="mt-3"
+              className="mt-3 border-2 border-neutral-900 text-neutral-950 hover:bg-neutral-950 hover:text-amber-400 font-bold"
             >
               ثبت درخواست جدید
             </Button>
@@ -106,7 +106,7 @@ export function ContactUsForm() {
 
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div className="space-y-2">
-                <Label htmlFor="name">نام و نام خانوادگی *</Label>
+                <Label htmlFor="name" className="text-neutral-900 font-bold text-xs">نام و نام خانوادگی *</Label>
                 <Input
                   id="name"
                   name="name"
@@ -116,11 +116,12 @@ export function ContactUsForm() {
                     setFormData((prev) => ({ ...prev, name: e.target.value }))
                   }
                   autoComplete="name"
+                  className="border-neutral-300 focus-visible:border-amber-400 focus-visible:ring-amber-400"
                 />
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="contact">شماره تلفن همراه جهت تماس *</Label>
+                <Label htmlFor="contact" className="text-neutral-900 font-bold text-xs">شماره تلفن همراه جهت تماس *</Label>
                 <Input
                   id="contact"
                   name="contact"
@@ -131,13 +132,14 @@ export function ContactUsForm() {
                     setFormData((prev) => ({ ...prev, contact: e.target.value }))
                   }
                   autoComplete="tel"
+                  className="border-neutral-300 focus-visible:border-amber-400 focus-visible:ring-amber-400"
                 />
               </div>
             </div>
 
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div className="space-y-2">
-                <Label htmlFor="subject">موضوع استعلام / تجهیزات *</Label>
+                <Label htmlFor="subject" className="text-neutral-900 font-bold text-xs">موضوع استعلام / تجهیزات *</Label>
                 <Input
                   id="subject"
                   name="subject"
@@ -146,11 +148,12 @@ export function ContactUsForm() {
                   onChange={(e) =>
                     setFormData((prev) => ({ ...prev, subject: e.target.value }))
                   }
+                  className="border-neutral-300 focus-visible:border-amber-400 focus-visible:ring-amber-400"
                 />
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="projectType">نوع کاربری محل</Label>
+                <Label htmlFor="projectType" className="text-neutral-900 font-bold text-xs">نوع کاربری محل</Label>
                 <Input
                   id="projectType"
                   name="projectType"
@@ -159,12 +162,13 @@ export function ContactUsForm() {
                   onChange={(e) =>
                     setFormData((prev) => ({ ...prev, projectType: e.target.value }))
                   }
+                  className="border-neutral-300 focus-visible:border-amber-400 focus-visible:ring-amber-400"
                 />
               </div>
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="message">توضیحات و نیازمندی‌ها *</Label>
+              <Label htmlFor="message" className="text-neutral-900 font-bold text-xs">توضیحات و نیازمندی‌ها *</Label>
               <Textarea
                 id="message"
                 name="message"
@@ -174,6 +178,7 @@ export function ContactUsForm() {
                 onChange={(e) =>
                   setFormData((prev) => ({ ...prev, message: e.target.value }))
                 }
+                className="border-neutral-300 focus-visible:border-amber-400 focus-visible:ring-amber-400"
               />
             </div>
 
@@ -190,7 +195,7 @@ export function ContactUsForm() {
               />
               <Label
                 htmlFor="needVisit"
-                className="text-xs font-normal text-muted-foreground cursor-pointer"
+                className="text-xs font-medium text-neutral-700 cursor-pointer"
               >
                 درخواست بازدید و کارشناسی حضوری رایگان در محل (ویژه پروژه‌ها)
               </Label>
@@ -198,7 +203,10 @@ export function ContactUsForm() {
           </CardContent>
 
           <CardFooter className="pt-2">
-            <Button type="submit" className="w-full sm:w-auto px-7 font-bold">
+            <Button
+              type="submit"
+              className="w-full sm:w-auto px-7 font-extrabold bg-amber-400 text-neutral-950 hover:bg-amber-500 shadow-md border border-amber-500/30"
+            >
               <Send className="size-4 me-2 rtl:-scale-x-100" />
               ارسال درخواست استعلام و مشاوره
             </Button>

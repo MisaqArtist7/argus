@@ -39,10 +39,10 @@ export function VerifyOtpForm() {
   };
 
   return (
-    <Card className="w-full border-border/80 shadow-md">
+    <Card className="w-full border-2 border-neutral-200 bg-white rounded-2xl shadow-xs">
       <CardHeader className="space-y-1.5 text-center">
-        <CardTitle className="text-2xl font-bold">تأیید کد یکبار مصرف</CardTitle>
-        <CardDescription className="text-xs sm:text-sm">
+        <CardTitle className="text-2xl font-bold text-neutral-950">تأیید کد یکبار مصرف</CardTitle>
+        <CardDescription className="text-xs sm:text-sm text-neutral-600">
           کد پیامک‌شده به شماره همراه خود را وارد کنید
         </CardDescription>
       </CardHeader>
@@ -58,7 +58,7 @@ export function VerifyOtpForm() {
           )}
 
           <div className="space-y-2">
-            <Label htmlFor="otpCode" className="text-center block">
+            <Label htmlFor="otpCode" className="text-center block text-neutral-900 font-bold text-xs">
               کد تأیید پیامکی *
             </Label>
             <div className="max-w-50 mx-auto">
@@ -70,14 +70,14 @@ export function VerifyOtpForm() {
                 maxLength={6}
                 dir="ltr"
                 placeholder="••••••"
-                className="text-center font-mono text-xl tracking-[0.5em] h-12"
+                className="text-center font-mono text-xl tracking-[0.5em] h-12 border-neutral-300 focus-visible:border-amber-400 focus-visible:ring-amber-400"
                 value={code}
                 onChange={(e) => setCode(e.target.value)}
                 autoComplete="one-time-code"
                 autoFocus
               />
             </div>
-            <p className="text-center text-[11px] text-muted-foreground pt-1">
+            <p className="text-center text-[11px] text-neutral-500 pt-1">
               کد ارسال‌شده معمولاً ۵ یا ۶ رقمی است.
             </p>
           </div>
@@ -87,7 +87,7 @@ export function VerifyOtpForm() {
               type="button"
               variant="ghost"
               size="sm"
-              className="text-xs text-muted-foreground hover:text-foreground"
+              className="text-xs text-neutral-600 hover:text-amber-600 hover:bg-amber-400/10 font-medium"
               onClick={() => {
                 // TODO: connect to backend
               }}
@@ -99,16 +99,20 @@ export function VerifyOtpForm() {
         </CardContent>
 
         <CardFooter className="flex flex-col gap-4 pt-2">
-          <Button type="submit" className="w-full font-medium" size="lg">
+          <Button
+            type="submit"
+            className="w-full font-extrabold bg-amber-400 text-neutral-950 hover:bg-amber-500 shadow-md border border-amber-500/30"
+            size="lg"
+          >
             <KeyRound className="size-4 me-2" />
             تأیید و ورود به پنل
           </Button>
 
-          <div className="text-center text-xs text-muted-foreground">
+          <div className="text-center text-xs text-neutral-600">
             شماره را اشتباه وارد کرده‌اید؟{" "}
             <Link
               href="/request-otp"
-              className="font-semibold text-primary underline-offset-4 hover:underline inline-flex items-center gap-1"
+              className="font-bold text-amber-600 underline-offset-4 hover:underline inline-flex items-center gap-1"
             >
               ویرایش شماره همراه
               <ArrowRight className="size-3 rtl:-scale-x-100" />

@@ -29,16 +29,16 @@ export function IntroSection() {
   ];
 
   return (
-    <section className="border-y bg-muted/20 py-16">
+    <section className="border-y border-neutral-200 bg-neutral-50/70 py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center space-y-4">
-          <div className="inline-block text-xs font-semibold uppercase tracking-wider text-primary">
+          <div className="inline-block text-xs font-bold uppercase tracking-wider text-amber-600">
             چرا برند آرگوس؟
           </div>
-          <h2 className="font-heading text-2xl font-bold tracking-tight sm:text-3xl">
+          <h2 className="font-heading text-2xl font-extrabold tracking-tight sm:text-3xl text-neutral-950">
             آرامش خاطر با تجهیزات نظارتی و امنیتی استاندارد
           </h2>
-          <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
+          <p className="text-sm leading-relaxed text-neutral-600 sm:text-base">
             سیستم‌های مداربسته و دزدگیر آرگوس طراحی شده‌اند تا در هر شرایط آب‌وهوایی
             و بدون وقفه، از سرمایه، خانه و کسب‌وکار شما محافظت نمایند.
           </p>
@@ -50,15 +50,15 @@ export function IntroSection() {
             return (
               <div
                 key={idx}
-                className="flex flex-col items-center text-center space-y-3 rounded-xl border bg-card/60 p-6 shadow-xs transition-colors hover:border-primary/40 hover:bg-card"
+                className="group flex flex-col items-center text-center space-y-3.5 rounded-2xl border border-neutral-200 bg-white p-6 shadow-xs transition-all duration-300 hover:border-amber-400 hover:shadow-md hover:-translate-y-1"
               >
-                <div className="flex size-13 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                <div className="flex size-14 items-center justify-center rounded-2xl bg-neutral-950 text-amber-400 border border-amber-400/30 shadow-sm transition-colors group-hover:bg-amber-400 group-hover:text-neutral-950 group-hover:border-amber-400">
                   <Icon className="size-6" />
                 </div>
-                <h3 className="font-heading text-base font-bold text-foreground">
+                <h3 className="font-heading text-base font-bold text-neutral-950">
                   {item.title}
                 </h3>
-                <p className="text-xs leading-relaxed text-muted-foreground">
+                <p className="text-xs leading-relaxed text-neutral-600">
                   {item.description}
                 </p>
               </div>
